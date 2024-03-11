@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+   <script>
+      const one = () =>{
+            alert("Your Email Sent Successfully...");
+        }
+
+        const two =() =>{
+            let a = confirm("Are You Sure ?");
+            alert( a );
+            if(a == true)
+            {
+                alert("Plese wait processing...");
+            }
+        }
+
+        const three = () =>{
+            let a = prompt("Enter Your Email Id");
+            alert("Downlode link Send to : " +a);
+        }
+   </script>
+</head>
+<body>
+    <h1>javascript popup windo example</h1>
+    <button onclick="one()">Alert()</button>
+    <p>Alert()- use to give confirmation message to use.
+        it has on button -"OK"
+    </p><br/>
+
+    <button onclick="two()">Confitm() - Delete Account</button>
+    <p>Confirm()- Use to Ask confirmation from user</p>
+    <p> "OK" =>true, "Cancel"=>false </p>
+
+    <button onclick="three()">Prompt() - Download File </button>
+    <p> Prompt() - Use to Ask non boolean input from user</p>
+    
+</body>
+</html>

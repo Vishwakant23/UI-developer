@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body bgcolor="#f4f5g6">
+    <table align="center" cellpadding="12">
+        <tr>
+            <th><a href="form2.html">Form Two</a></th>
+            <th><a href="form3.html">Form Three</a></th>
+            <th><a href="form4.html">Form Four</a></th>
+            <th><a href="form5.html">Form Five</a></th>
+            <th><a href="form6.html">Form Six</a></th>                     
+        </tr>
+    </table>
+
+    <form action="save.php" method="post" >
+        <table align="center" cellpadding="15" bgcolor="lightgreen">
+            <caption>
+                <h1> Enquiry </h1>
+            </caption>
+            <tr>
+                <td> <input type="text" placeholder="Full Name"/> </td>
+                <td rowspan="4"> 
+                    <textarea placeholder="Enter Your Message" rows="13"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td> <input type="email" placeholder="Enter Email Id"/></td>
+            </tr>
+
+            <tr>
+                <td> <input type="number" placeholder="Enter Mobile No"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <select>
+                        <option value="" >--------Choose City-------</option>
+                        <option value="1" selected="selected">Bangalore</option>
+                        <option value="2">Mumbai</option>
+                        <option value="3">Chennai</option>
+                        <option value="4">Pune</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" checked="checked"/>
+                    I am Agree to Recived Call back
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                  <button type="submit"> Send Message </button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+    
+</body>
+</html>

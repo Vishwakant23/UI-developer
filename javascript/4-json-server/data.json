@@ -1,0 +1,56 @@
+{
+  "booklist": [
+    {
+      "id": 2,
+      "bookname": "JAVA",
+      "price": 500,
+      "author": "Vishu"
+    },
+    {
+      "id": 3,
+      "bookname": "PHP",
+      "price": 6000,
+      "author": "Ram"
+    },
+    {
+      "bookname": "php book",
+      "price": "400",
+      "author": "kjdy",
+      "id": 4
+    }
+  ],
+  "joblist": [
+    {
+      "title": "php",
+      "salary": "20000",
+      "city": "Bangalore",
+      "id": 6
+    },
+    {
+      "title": "java",
+      "salary": "30000",
+      "city": "pune",
+      "id": 7
+    }
+  ],
+  "productlist": [
+    {
+      "id": 3,
+      "pname": "Orange",
+      "price": 100,
+      "stock": true
+    },
+    {
+      "pname": "apple",
+      "price": "200",
+      "stock": "true",
+      "id": 15
+    },
+    {
+      "pname": "php ",
+      "price": "23123",
+      "stock": "true",
+      "id": 16
+    }
+  ]
+}

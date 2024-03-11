@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Createsession</title>
+    <script>
+        const save=()=>{
+            let name= document.getElementById("fname").value;
+            let mobile=document.getElementById("mobile").value;
+            sessionStorage.setItem("fullname",name);
+            sessionStorage.setItem("mobileno",mobile);
+            alert("Session Storage Created..");
+        }
+
+    </script>
+</head>
+<body>
+    <h1>How to Create Createsession </h1>
+    
+    <p>Enter Your Name : <input type="text" id="fname"/></p>
+    <p>Enter Your Mobile : <input type="number" id="mobile"/></p>
+    <button onclick="save()">Save</button>
+    <p>
+        <a href="displaysession.html">Show Data</a>
+    </p>
+    
+</body>
+</html>

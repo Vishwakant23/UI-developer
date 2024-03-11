@@ -1,0 +1,207 @@
+body{
+    margin: 0px;
+    
+}
+h1{
+    font-size:60px;
+    color: rgb(42, 46, 238);
+    text-align: center;
+}
+ul{
+    background-color: rgb(99, 5, 24);
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    position: sticky;
+}
+ul li{
+    display: inline-block;
+    padding: 15px 40px 15px;
+}
+ul li a{
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+ul li:hover{
+    cursor: pointer;
+    background: blue;
+    transition: 1s linear;
+}
+section{
+    margin: auto;
+    width: 80%;
+    min-height: 400PX;
+}
+footer{
+    background: rgb(3, 29, 0);
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    height: 200px;
+    padding: 10px;
+}
+.footerblock{
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    padding: 20px;
+}
+#banner{
+    background-image: url("2.avif");
+    background-size: 100% 100%;
+    height: 500px;
+    animation: mybanner;
+    animation-duration: 5s;
+    animation-iteration-count:infinite;
+}
+@keyframes mybanner{
+    25%{ background-image: url("3.avif");}
+    50%{ background-image: url("4.avif");}
+    75%{ background-image: url("5.avif");}
+}
+.Product{
+    margin: 2%;
+    padding: 1%;
+    width: 17%;
+    display: inline-block;
+    height: 150px;
+    background-image: linear-gradient(orange, red, green);
+    border-radius: 10px;
+}
+.Product img{
+    width: 100%;
+    height: 100%;
+}
+.textcenter{
+    height: auto !important;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(black, red, yellow);
+}
+#mytech{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+
+}
+fieldset{
+    width: 500px;
+    margin: auto;
+    padding: 15px;
+    border: 10px solid rgb(109, 12, 12);
+    border-radius: 5px;
+
+}
+legend{
+    background: green;
+    color: white;
+    font-size: 23px;
+    padding: 6px 20px 6px;
+    border-radius: 5px;
+}
+fieldset table{
+    width: 100%;
+}
+fieldset table tr{
+    height: 30px;
+}
+.smallinput{
+    height: 28px;
+    width: 90%;
+}
+.biginput{
+    height: 70px;
+    resize: none;
+
+}
+button{
+    padding: 6px 15px 6px;
+    margin-top: 20px;
+    background: blue;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px 30px 0px 30px;
+}
+button:hover{
+    background: darkred;
+}
+button:focus{
+    background: black;
+    border-radius: 50%;
+}
+#about{
+    display: grid;
+    grid-template-columns: 30% 45% 25%;
+}
+#about table, #intro, address{
+    margin: 40px;
+    vertical-align: top;
+
+}
+
+/* media query start */
+
+@media screen and (min-width:1px) and (max-width:700px) {
+    ul li{
+        padding: 5px;
+
+    }
+    ul li a{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    #banner{
+        height: 200px;
+    }
+    .Product{
+        width: 41%;
+        height: auto;
+    }
+    fieldset{
+        width: 95% !important;
+    }
+    #about{
+        grid-template-columns: auto;
+    }
+  
+   
+    
+}
+
+/* medium device */
+
+
+@media screen and (min-width:701px) and (max-width:1100px) {
+    ul li{
+        padding: 8px;
+
+    }
+    ul li a{
+        font-size: 16px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    #banner{
+        height: 250px;
+    }
+    .Product{
+        width: 25%;
+        height: auto;
+    }
+    fieldset{
+        width: 60% !important;
+    }
+    #about{
+        
+        grid-template-columns: 50% 50%;
+    }
+   
+    
+}
+

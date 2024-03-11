@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Binding</title>
+    <script>
+        const one =()=>{
+            document.write("<h1>Hi,How Are You....</h1>")
+        }
+        let data ="<h1> Send by Js</h1> <p> The js is Working </p>";
+        const two =()=>{
+            document.getElementById("xyz").innerText=data;
+        }
+        const three =()=>{
+            document.getElementById("xyz").innerHTML=data;
+        }
+
+        
+
+       
+    </script>
+</head>
+<body>
+    <h1>Welcome to javascript</h1>
+
+    <button onclick="one()">Document .Write</button>
+    <button onclick="two()">inner Text</button>
+    <button onclick="three()">inner HTML</button>
+
+    <p>This is from p tag</p>
+
+    <h2>I am in h2</h2>
+
+    <div id="xyz">I am inside div</div>
+
+</body>
+</html>

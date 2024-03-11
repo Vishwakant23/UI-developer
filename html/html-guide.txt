@@ -1,0 +1,180 @@
+wahte are vaild extension of html document ?
+.html
+.html
+Note - .html is google seo friendly
+-----------------------------------
+What is structure of html document ?
+html - start to end is called document 
+-> it devide into 2 part
+1. head
+    -> marketing (digital marketing) & anasytics (google)
+    -> library
+      =>css
+      =>javascript
+      =>othr third party library
+2. body
+    ->contents with suitable html tags 
+    ---------------------------------------------
+
+    h1 to h6 - it is called heading tags 
+           it use to create heading of webpage as main keyword of current page.
+           Note - use h1 only 1 time to display main keyword as heading of current page.
+    h2 to h6 no any such rule to use how many times.
+    ---------------------------------------------------------------------
+
+    Tags for text formating
+    --> use the followig tags for 1 to 130 chars
+    b-
+    i-
+    u-
+    font- it apply color and size along with font family
+    strong- it also make string as bold
+    em-   it also make string as italici 
+    lable- it display text is normal font 
+---------------------------------------------------------------------------
+
+     Type of list in html ?
+
+     -> - order list  - orderlist.html
+         type ="1"
+         type ="A"
+         type ="a"
+         type ="I"
+         type ="i"
+
+     -> - unorder list - unorderlist.html
+     type ="1"
+         type ="disc"
+         type ="square"
+         type ="circle"
+         type ="none"
+
+     ->Dl - definition list
+        ->dt - definition title
+            it use to display headline of content
+        ->dd - definition defails
+            it use to display details about content
+
+      =>dl.html
+
+
+      Table 
+      ->  1st method - structure
+
+        =>table 
+        -> caption
+        -> tr (table row)
+                -> th (table heading)
+                -> td (table date)
+
+      ->  2nd method - structure 
+
+          => table 
+              -> thaed  
+                  ->tr 
+                       ->th
+
+              ->tbody
+                   ->tr
+                        ->td
+              ->tfoot    
+                    ->tr
+                        ->th 
+
+
+     List of property & values in - table , tr , th , td
+        =>align (left , center , right)        
+        =>border
+        =>cellpading -it will apply space inside th, td 
+        =>cellspacing - it apply space outside of th , td 
+
+    ->table1.html    
+
+        =>bordercolor
+        =>width
+        =>height
+        =>bgcolor
+
+    ->table2.html 
+
+    =>colspan -  it use to combine space of 2 or more th or td .
+    =>rowspan -  it use to combine space of 2 or moretr
+ ->table4.html
+ ----------------------------------------------------------------------------------------
+ 26-7-2023
+ 
+
+ How to link the type page un html?
+     <a herf=""title="" target="" class="" id="" >Text to click </a>
+     -> a is tag name 
+     -> herf - it i property name , it use to set path of next page
+     -> title - it is property name, it use in digital marketing
+     -> target - it is property name , it use to set location , where next  page will open 
+     as - new tab , blank tab.... it has 7 type
+     -> id + class - it is property name use to link with css amd javascript 
+
+     link1.html
+     link2.html             
+
+-------------------------------------------------------------------------------
+Type of target ?
+    --in html --
+    target="_self" - The next page Will opne in same tab - it default target
+    target="_new" - The next page will open innew tab only 1st click
+    target="_blank" - The next page will opne in new tab every click
+    target="userdefine" - Will implement in  html mini project
+
+    ------------- using javascript----------
+    target="_cuild"
+    target="_parent"
+    -----------------------------------------
+
+    List of input tags
+       1. text
+       2. number
+       3. email
+       4. password
+       5.textarea
+       6. file
+       7. select
+       8. checkbox
+       9. radio
+       10. date
+       11. datetime-local
+       12. button
+           a. submit
+           b.reset
+           c.button
+
+    ----------------------------------------------
+    27-7-2023
+           List of project in input element
+               =>placeholder - it for input guidance 
+               =>maxlength - it limit of character - in text , email, password, textarea
+               =>size - it reset with of followig  - text , email , password
+               =>value - it use to display default value in all input element
+               =>readonly - it use to element the read only (non editable) but value will pass to backend 
+               =>disabled - it use to element as read only (non editable) but value will not pass to backend
+               =>tabindex - it use to set sequence of cursor pointer .
+               =>name - it create container in hml to hold the value given by user 
+               =>class - 
+               =id - the calss amd it to communicate with js + css
+               =>rows - The rows use to  reset the hight of textarea
+               =>cols - the cols use to reset the width of textarea
+
+               =>form - it is parent tag of all the input tags
+                   action - it is use to set url odf backend file where we need to submit/send form data
+                   method - it defines the type of communication betbeen clint and server as secure of nusecoure
+                           =>Get - it comunicate in unsecure mode - data will be visible in url
+                           =>Post - it comunicate in secure mode - data will  not be visible anywhere
+                   enctype- it secure the file while uploading form clint to server (as resume /adhar /uplode)
+-------------------------------------------------------------------------
+
+
+        form2.html       
+        form3.html       
+        form4.html
+        form5.html
+        form6.html
+--------------------------------------------------------------------------        
+

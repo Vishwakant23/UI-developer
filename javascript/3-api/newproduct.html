@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        const save=()=> {
+            let name=document.getElementById("pname").value;
+            let price=document.getElementById("pprice").value;
+            let stock=document.getElementById("stock").value;
+            let newitem={"pname":name,"price":price,"stock":stock};
+            let url="http://localhost:3000/productlist";
+            let postdata={
+                headers:{'content-Type':'application/json'},
+                method : "POST",
+                body :JSON.stringify(newitem)
+            }
+            fetch(url,postdata)
+            .then(response=>response.json())
+            .then(iteminfo =>{
+               alert( name + " - save Sucsessfully !....");
+               window.location.href="index.html";
+            })
+        }
+
+    </script>
+</head>
+<body>
+    <table align="center" cellpadding="15">
+        <caption>
+            <h1> Enter Product Details</h1>
+        </caption>
+         <tr>
+            <th>Product Name </th>
+            <td><input type="text" id="pname" size="40"/></td>
+         </tr> 
+         <tr>
+            <th>Product price </th>
+            <td><input type="text" id="pprice" size="40"/></td>
+         </tr>
+         <tr>
+             <th> In Stock </th>
+             <td>
+                <select id="stock">
+                    <option value="true">YES</option>
+                     <option value="false">NO</option>
+                </select>
+             </td>
+
+         </tr>
+         <tr>
+            <th colspan="2">
+                <button onclick="save()"> Save Product </button>
+                <br></br>
+                <a href="index.html">Back To List</a>
+            </th>
+         </tr>
+    </table>
+</body>
+</html>

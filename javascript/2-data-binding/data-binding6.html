@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Binding6</title>
+    <style>
+        header{
+            padding: 20px;  
+            text-align: center;
+        }
+        button:focus{
+            background-color: red;
+            color: white;
+            border: none;
+        }
+        p{
+            display: inline-block;
+            font-size: 28px;
+            color: blue;
+            width: 24%;
+            text-align: center;
+            /* margin: 1%; */
+
+        }
+        #container{
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let booklist=["html", "css", "bootstrap","javascript","react","angular",];
+        const five=()=>{
+            let data="";
+            booklist.map((bookname,index)=>{
+                data = data +"<p>"+ bookname +" <br/> <button onclick='delbook("+ index +")'>Delete</button> </p>";
+
+            })
+            document.getElementById("container").innerHTML=data;
+
+        }
+
+        const save=()=>{
+            let bookname=document.getElementById("newbook").value;
+            // alert(bookname);
+            booklist.push(bookname);
+            five();//recall the fnction to relode the list
+            swal(bookname,"Added Successfully","success");
+
+            document.getElementById("newbook").value="";//to clear text field
+        }
+
+        
+        const delbook=(index)=>{
+            // alert(index);
+            let name=booklist[index];
+            booklist.splice(index,1);
+            five();//relode the list after delete
+            swal(name,"Deleted Successfully","warning");
+        }
+    </script>
+</head>
+<body onload="five()">
+    <header align="center">
+        <h1>JavaScript Loop Example</h1>
+        Enter Book Name : <input type="text" id="newbook"/>
+        <button onclick="save()">Save</button>
+        <button onclick="five()">Book List</button>
+    </header>
+    <section id="container"></section>
+    
+</body>
+</html>

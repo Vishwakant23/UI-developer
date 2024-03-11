@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Binding6</title>
+    <style>
+       
+        button:focus{
+            background-color: red;
+            color: white;
+            border: none;
+        }
+        p{
+            font-size: 20px;
+            color: blue;
+            text-align: center;
+
+        }
+        fieldset{
+            width:40%;
+            height: 300px;
+            margin-left: 405px 
+        }
+        section{
+            color: darkorange;
+        }
+     
+    </style>
+    <script>
+        let cities=["Banaglore"];
+        const one = ()=>{
+            let data="";
+            cities.map((cityname,index)=>{
+                data = data + cityname + "=" +cityname.length+"</br>";
+            })
+
+            document.getElementById("container").innerHTML=data;
+            
+
+        }
+        const save=()=>{
+            let city= document.getElementById("cityname").value;
+            // alert(city);    
+            cities.push(city);
+            one();
+            document.getElementById("cityname").value="";
+        }
+
+
+    </script>
+    
+            
+
+    
+</head>
+<body onload="one()">
+    <p>
+        Enter city Name:<input type="text" id="cityname"/>
+        <button onclick="save()">Save</button>
+    </p>
+    <fieldset>
+        <legend>Available City</legend>
+        <section id="container"></section>
+    </fieldset>
+    
+    
+</body>
+</html>

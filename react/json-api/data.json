@@ -1,0 +1,34 @@
+{
+  "user": [
+    {
+      "name": "Vishwakant Yadav",
+      "city": "Bangalore",
+      "age": "23",
+      "edu": "BCA",
+      "id": 1
+    },
+    {
+      "name": "Suchi",
+      "city": "Pune",
+      "age": "23",
+      "edu": "BA",
+      "id": 2
+    },
+    {
+      "name": "Mohit",
+      "city": "Dellhi",
+      "age": "25",
+      "edu": "MCA",
+      "id": 3
+    },
+    {
+      "name": "Sumit",
+      "city": "Pune",
+      "age": "30",
+      "edu": "BE",
+      "id": 4
+    }
+  ],
+  "product": [],
+  "company": []
+}

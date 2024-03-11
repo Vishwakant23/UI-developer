@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <script>
+        const save= ()=>{
+            let formstatus = true;
+
+            let fullname = document.getElementById("fname");
+            if(fullname.value == ""){
+                fullname.style.borderColor="red";
+                document.getElementById("nameerror").innerText="Invalid Name !";
+                formstatus = false;
+            }else{
+                fullname.style.borderColor="blue";
+                document.getElementById("nameerror").innerText="";
+            }
+
+           
+
+            //dob validation
+            let dob = document.getElementById("dob");
+            if(dob.value == ""){
+                dob.style.borderColor="red";
+                document.getElementById("doberror").innerText="Invalid Date of Birth !";
+                formstatus = false;
+            }else{
+                dob.style.borderColor="blue";
+                document.getElementById("doberror").innerText="";
+            }
+
+
+               //email validation
+               var epatern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+               let email = document.getElementById("email");
+               if ( ! epatern.test(email.value))
+               {
+               email.style.borderColor="red";
+               document.getElementById("emailerror").innerText="Invalid Email id  !";
+               formstatus=  false;
+               }else{
+                email.style.borderColor="blue";
+               document.getElementById("emailerror").innerText="";
+
+               }
+          
+
+              //mobile validation
+              let mpatern = /^[0]?[6789]\d{9}$/
+              let mobile = document.getElementById("mobile");
+              if ( ! mpatern.test(mobile.value))
+              {
+               mobile.style.borderColor="red";
+               document.getElementById("mobileerror").innerText="Invalid Mobile No  !";
+               formstatus=  false;
+               }else{
+                mobile.style.borderColor="blue";
+               document.getElementById("mobileerror").innerText="";
+
+               }
+
+              //password validation
+               let password = document.getElementById("password");
+            if (password.value.length < 6 || password.value.length >8 )
+            {
+                password.style.borderColor="red";
+                document.getElementById("passworderror").innerText="Invalid Mobile No !";
+                formstatus = false;
+            }else{
+                password.style.borderColor="blue";
+                document.getElementById("passworderror").innerText="";
+            }
+
+            // city validation
+              let city = document.getElementById("city");
+            if(city.value == ""){
+                city.style.borderColor="red";
+                document.getElementById("cityerror").innerText="Select Your City !";
+                formstatus = false;
+            }else{
+                city.style.borderColor="blue";
+                document.getElementById("cityerror").innerText="";
+            }
+
+              // address validation
+              let address = document.getElementById("address");
+            if(address.value == ""){
+                address.style.borderColor="red";
+                document.getElementById("addresserror").innerText="Select Your City !";
+                formstatus = false;
+            }else{
+                address.style.borderColor="blue";
+                document.getElementById("addresserror").innerText="";
+            }
+            
+
+            if(formstatus==true)
+            {
+                let userdata={
+                    name:fullname.value,
+                    dob:dob.value,
+                    email:emali.value,
+                    mobile:mobile.value,
+                    password:pass.value,
+                    city:city.value,
+                    address:address.value
+                };
+                let url ="http://localhost:1234/contact";
+                let postdata={
+                    headers:{'content-Type':'application/json'},
+                    method:"POST",
+                    body:JSON.stringify(userdata)
+                };
+                fetch(url,postdata)
+                .then(response=>response.json())
+                .then(userinfo=>{
+                    alert("Record Save Successfully !");
+                })
+
+            }
+
+            
+        
+        }
+
+        const clearall= ()=>{
+            alert("clear");
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <h3 class="text-center text-primary mb-4">Form Validation </h3>
+                <form action="#" method="POST">
+                    <div class="mb-3">
+                        <label>Full Name</label>
+                        <input type="text" id="fname" class="form-control"/>
+                        <i id="nameerror" class="text-danger"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Date Of Birth</label>
+                        <input type="date" id="dob" class="form-control"/>
+                        <i id="doberror" class="text-danger"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email id</label>
+                        <input type="email" id="email" class="form-control"/>
+                        <i id="emailerror" class="text-danger"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Mobile NO.</label>
+                        <input type="number" id="mobile" class="form-control"/>
+                        <i id="mobileerror" class="text-danger"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" id="password" class="form-control"/>
+                        <i id="passworderror" class="text-danger"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>City</label>
+                        <select id="city" class="form-select">
+                            <option value="">Chose</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Chennai">Chennai</option>
+                        </select>    
+                        <i id="cityerror" class="text-danger"></i>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Full Address</label>
+                        <input type="text" id="address" class="form-control">
+                        <i id="addresserror" class="text-danger"></i>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary m-2" onclick="save()">Save</button>
+                        <button type="reser" class="btn btn-warning m-2" onclick="clearall()">Clear All</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

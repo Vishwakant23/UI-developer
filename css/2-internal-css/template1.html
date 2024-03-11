@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            margin: 0px;
+        }
+        #topnav{
+            background: blue;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #topnav li{
+            padding: 20px 40px 20px;
+            list-style-type: none;
+        }
+        #topnav li a{
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+        }
+        #container{
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 25% 75%;
+            min-height: 500px;
+        }
+        #services{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #services div{
+            font-size: 35px;
+            margin: 35px;
+            color: blue;
+        }
+        aside p{
+            color: red;
+            font-size: 25px;
+            margin-bottom: 15px;
+
+        }
+        footer{
+            background: darkgreen;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            height: 100;
+
+        }
+    </style>
+</head>
+<body>
+    <ul id="topnav">
+        <li><a href="template1.html">Template 1</a></li>
+        <li><a href="template2.html">Template 2</a></li>
+        <li><a href="template3.html">Template 3</a></li>
+        <li><a href="template4.html">Template 4</a></li>
+    </ul>
+    <section id="container">
+        <aside>
+            <p>Bangalore</p>
+            <p>Mumbai</p>
+            <p>pune</p>
+            <p>delhi</p>
+            <p>Chennai</p>
+            <p>kolkata</p>
+
+        </aside>
+        <div id="services">
+            <div>Bangalore</div>
+            <div>Mumbai</div>
+            <div>pune</div>
+            <div>delhi</div>
+            <div>Chennai</div>
+            <div>kolkata</div>
+            <div>patna</div>
+            <div>Website Design</div>
+            <div>Digital Marketing</div>
+            <div>Eduation</div>
+            <div>Education</div>
+        </div>
+    </section>
+    <footer>
+        This is the footer
+    </footer>
+    
+</body>
+</html>

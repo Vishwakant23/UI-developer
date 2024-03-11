@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displaylocal</title>
+    <script>
+        const getdata=()=>{
+            document.getElementById("myname").innerText=localStorage.getItem("fullname");
+            document.getElementById("mymobile").innerText=localStorage.getItem("mobileno");
+
+        }
+        const cleardata=()=>{
+            localStorage.clear();
+            window.location.reload();//to refresh the current page  
+        }
+
+    </script>
+</head>
+<body onload="getdata()">
+    <h1>Data from localStorage</h1>
+
+    <button onclick="cleardata()">Clear all</button>
+
+    <h2 id="myname"></h2>
+    <h2 id="mymobile"></h2>
+
+    <a href="createlocal.html">Edit data</a>
+    
+</body>
+</html>

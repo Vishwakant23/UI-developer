@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data-binding 10</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        h1{color: blue; font-size: 50px; text-align: center;}
+        p{color: red; font-size: 30px;}
+        
+
+        header{
+            text-align: center;
+            padding: 20px;
+        }
+        #ok{
+            display: inline-block;
+            width: 300px;
+            margin: 40px;
+            text-align: center;
+        }
+        section{
+            display: inline-block;
+            width: 300px;
+            margin: 40px;
+            vertical-align: top;
+
+        }
+        input[type="text"]{
+            display:block;
+            margin: 15px;
+            width: 90%;
+            padding: 10px;
+
+        }
+        button{
+            margin: 5px;
+            padding: 5px;
+            background-color: rgb(240, 9, 9);
+            color: white;
+            border-radius: 10px 0px 10px 0px;
+            border: none;
+            cursor: pointer;
+
+        }
+        button:focus{
+            background-color: white;
+            color: rgb(241, 5, 5);
+        }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let itemlist=[
+            {name:"apple", price:300, qty:200, seller:"Ganesh"},
+            {name:"mango", price:100, qty:300, seller:"Mahesh"},
+            {name:"banana", price:50, qty:500, seller:"alex"},
+            {name:"Dell Mouse", price:500, qty:50, seller:"Dell Partner"},
+            {name:"Hp Leptop", price:50000, qty:500, seller:"Hp Partner"},
+            
+
+        ];
+
+        const getinfo=()=>{
+            let data ="";
+            itemlist.map((item,index)=>{
+            data = data+"<tr>";
+            data = data +"<td>"+itemlist[index].name+"</td>";
+            data = data +"<td>"+itemlist[index].price+"</td>";
+            data = data +"<td>"+itemlist[index].qty+"</td>";
+            data = data +"<td>"+itemlist[index].seller+"</td>";
+            data = data +"<td> <button onclick='delbook("+ index +")'>Delete</button> </td>";
+            data = data+"</tr>";
+            })
+            document.getElementById("container").innerHTML=data;
+        }
+
+       
+
+        const save=()=>{
+            let itemname = document.getElementById("itemname").value;
+            let itemprice = document.getElementById("itemprice").value;
+            let itemqty = document.getElementById("itemqty").value;
+            let itemseller = document.getElementById("itemseller").value;
+           let newitem= {name:itemname, price:itemprice, qty:itemqty, seller:itemseller};
+           itemlist = itemlist.concat(newitem);
+           getinfo();
+           swal(itemname,"Added Successfully","success");
+           
+
+
+           document.getElementById("itemname").value;
+           document.getElementById("itemprice").value;
+           document.getElementById("itemqty").value;
+           document.getElementById("itemseller").value;
+        }
+                const delbook = (index) =>{
+                itemlist.splice(index,1);
+                getinfo();
+                swal(name,"Deleted Successfully","warning");
+            }
+
+    </script>
+</head>
+<body onload="getinfo()">
+    <h1>Ovject & Array of Object</h1>
+
+    <header id="myheader"></header>
+
+
+    <div id="ok">
+        <input type="text" id="itemname" placeholder="Item Name"/>
+        <input type="text" id="itemprice" placeholder="Item Price"/>
+        <input type="text" id="itemqty" placeholder="Item Quantity"/>
+        <input type="text" id="itemseller" placeholder="Item Seller"/>
+        <button onclick="save()">Save</button>
+    </div>
+    <table align="right" cellpadding="12">
+        <thead>
+            <tr>
+                <th>Item name</th>
+                <th>Item price</th>
+                <th>Item Quantity</th>
+                <th>Item Seller</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="container"></tbody>
+    </table>
+</body>
+</html>

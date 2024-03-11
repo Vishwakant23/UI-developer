@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="icon/css/all.css"/>
+        <script>
+            const gethome=()=>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET","home.html");
+                xmlhttp.send();
+
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("ajaxdata").innerHTML = this.responseText;
+                    }
+                };
+               
+
+            }
+
+            const getabout=()=>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET","about.html");
+                xmlhttp.send();
+
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("ajaxdata").innerHTML = this.responseText;
+                    }
+                };
+                
+            }
+
+            const getcontact=()=>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET","contact.html");
+                xmlhttp.send();
+
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("ajaxdata").innerHTML = this.responseText;
+                    }
+                };
+                
+            }
+
+            const getproject=()=>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET","project.html");
+                xmlhttp.send();
+
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("ajaxdata").innerHTML = this.responseText;
+                    }
+                };
+                
+            }
+
+            const getservice=()=>{
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET","services.html");
+                xmlhttp.send();
+
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("ajaxdata").innerHTML = this.responseText;
+                    }
+                };
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <h1 class="text-danger"> AJAX </h1>
+                    <small class="text-primary"> Communicate Without Reload </small>
+                </div>
+                    <div class="col-lg-8 text-end">
+                    <div class="btn-group">
+                        <button class="btn btn-danger" onclick="gethome()"> <i class="fa fa-home"></i> Home </button>
+                        <button class="btn btn-info" onclick="getabout()"> <i class="fa fa-building"></i> About Us </button>
+                        <button class="btn btn-success" onclick="getcontact()"> <i class="fa fa-headset"></i> Contact Us </button>
+                        <button class="btn btn-warning" onclick="getproject()"> <i class="fa fa-suitcase"></i> Project  </button>
+                        <button class="btn btn-secondary" onclick="getservice()"> <i class="fa fa-tools"></i> Our Services </button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="list-group">
+                        <li class="list-group-item active">Our Services</li>
+                        <li class="list-group-item ">Seles & Marketing</li>
+                        <li class="list-group-item ">Education</li>
+                        <li class="list-group-item ">Employment</li>
+                        <li class="list-group-item ">Customer Support</li>
+                        <li class="list-group-item ">Hire & Deploy</li>
+                    </ul>
+
+                    <div class="card mt-4 border-0 shadow-lg">
+                        <div class="card-header bg-info text-white">Office Address</div>
+                        <div class="card-body">
+
+                            <p>Firstenquiry  Digital media</p>
+                            <p>#123, 2nd Floor , Outer ring rode marathahalli bnagalore 5600037</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" id="ajaxdata"></div>
+                <div class="col-lg-2">
+                    <div class="p-4 text-center shadow-lg rounded ">
+                        <i class="fa fa-bell fa-4x text-warning fa-shake"></i>
+                        <p>AJAX - Asynchronous JavaScript & XML</p>
+                        <p>it use to fatch data from given URL without reloading the current page..</p>
+                        <p>The AJAX Communicate using Unsecure method</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-5 p-5">
+            <div class="ror">
+                <div class="col-lg-12 text-center">
+                    <a href="#" class="pe-5 text-decoration-none">Contact Us</a>
+                    <a href="#" class="pe-5 text-decoration-none">Chat Support</a>
+                    <a href="#" class="pe-5 text-decoration-none">Terms of Use</a>
+                    <a href="#" class="pe-5 text-decoration-none">Privacy & Policy</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

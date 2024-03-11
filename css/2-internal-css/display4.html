@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        #topnev{
+            background: purple;
+            margin: 0px;
+            padding: 0px;
+
+
+        }
+        #topnev li{
+            display: inline-block;
+            padding: 20px 40px 20px;
+            color: white;
+            font-size: 22px;
+        }
+        #topnev li:hover{
+            background: green;
+            color: black;
+            cursor: pointer;
+            transition: 1s linear;
+            filter: blur(2s);
+
+        }
+        #topnev ul li:hover{
+            filter: blur(5s);
+        }
+        #container{
+            width: 80%;
+            margin: 50px auto 50px;
+            display: grid;
+            grid-template-columns: 25% 75%;
+            min-height: 450px;
+        }
+        #leftnev li{
+            font-size: 20px;
+            color: blue;
+            margin-bottom: 15px;
+            list-style-type: none;
+        }
+        h1{
+            color: orange;
+            font-size: 60px;
+        }
+        footer{
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            background: blue;
+            padding: 20px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="topnev">
+        <li>Home</li>
+        <li>Contact us</li>
+        <li>Project Demo</li>
+        <li>Create Profile</li>
+        <li>Login</li>
+        <li>Technologies</li>
+    </ul>
+    <section id="container">
+        <ul id="leftnev">
+            <li>Home</li>
+            <li>Contact us</li>
+            <li>Project Demo</li>
+            <li>Create Profile</li>
+            <li>Login</li>
+            <li>Technologies</li>
+        </ul>
+        <div>
+            <h1>Welcome to my Company</h1>
+        </div>
+    </section>
+    <footer>
+        <p>
+            Your Company Copyright will come here....
+        </p>
+    </footer>
+    
+</body>
+</html>

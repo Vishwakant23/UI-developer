@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        @keyframes mybanner {
+            25%{background-image: url('2.avif');}
+            50%{background-image: url('3.avif');}
+            75%{background-image: url('4.avif');}
+            25%{ color: green;}
+            50%{ color: blue;}
+            75%{ color: yellow;}
+
+
+            
+        }
+        #banner{
+            height: 300px;
+            padding: 100px;
+            background-image: url('f1.avif');
+            background-size: 100% 100%;
+            font-size: 100px;
+            text-align: center;
+            color: rgb(21, 39, 54);
+            animation: mybanner;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        #mynav{
+            margin: 0px;
+            background-image: linear-gradient(to left,blue, darkblue, rgb(255, 11, 11) );
+            display: flex;
+            flex-wrap: wrap;
+            top: 0px;
+            position: sticky;
+
+        }
+        #mynav li{
+            padding: 18px 40px 18px;
+            list-style-type: none;
+            
+
+        }
+        #mynav li a{
+            color: white;
+            font-size: 22px;
+            text-decoration: none;
+            
+        }
+        #mynav li:hover{
+            background-color: brown;
+            transition: 1s linear;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #pagetitle{
+            color: blue;
+            font-size: 70px;
+            text-align: center;
+        }
+        #Services{
+            margin: auto;
+            width: 80%;
+            display: grid;
+            grid-template-columns: 33.33%  33.33%  33.33%;
+
+        }
+        .myservices{
+            margin: 20px;
+            padding: 10px;
+        }
+        .myservices h3{
+            text-align: center;
+            font-size: 25px;
+            color: orangered;
+        }
+        footer{
+            background-color: darkcyan;
+            color: white;
+            padding: 15px;
+            height: 100px;
+            text-align: center;
+            font-size: 18px;
+            border-top: 20px dashed yellow;
+        }
+        header{
+            display: grid;
+            grid-template-columns: auto auto;
+            width: 80%;
+            margin: auto;
+            padding: 5px;
+            font-size: 17px;
+            
+
+        }
+        #rightinfo{
+            text-align: right;
+        }
+
+        /* media query start */
+
+        @media screen and (min-width:1px) and (max-width:700px){
+            #banner{
+                font-size: 40px;
+                padding: 40px;
+                height: 100px;
+            }
+            #pagetitle{
+                font-size: 45px;
+            }
+            #Services{
+                grid-template-columns: auto;
+            }
+            #mynav li{
+                padding: 5px;
+    
+            }
+            #mynav li a{
+                font-size: 15px;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <p id="leftinfo">+91-4567890</p>
+        <p id="rightinfo">Bangalore Marathahlli</p>
+
+
+    </header>
+    <ul id="mynav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Technologies</a></li>
+        <li><a href="#">Investor</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <section id="banner"> Css Animated Banner</section>
+    <h1 id="pagetitle"> Our Services</h1>
+    <section id="Services">
+        <div class="myservices">
+            <h3>Software Development</h3>
+            <p>dd sd d ad a da sd a dasd  asd  asd as d sd  asd a d  d as  
+                 da sd  d a da  d ad a d  ad a d ad a d  d d a da d a da 
+                  d a sd asd as d s d as d asd as d s d sd as d as da da 
+                   dad da das da d a d asd  ad a da d ad a d ad a d ad  
+                   dd sd d ad a da sd a dasd  asd  asd as d sd  asd a d  d as  
+                   da sd  d a da  d ad a d  ad a d ad a d  d d a da d a da 
+                    d a sd asd as d s d as d asd as d s d sd as d as da da 
+                     dad da das da d a d asd  ad a da d ad a d ad a d ad    
+            </p>
+        </div>
+
+        <div class="myservices">
+            <h3>Digital Marketing</h3>
+            <p>dd sd d ad a da sd a dasd  asd  asd as d sd  asd a d  d as  
+                 da sd  d a da  d ad a d  ad a d ad a d  d d a da d a da 
+                  d a sd asd as d s d as d asd as d s d sd as d as da da 
+                   dad da das da d a d asd  ad a da d ad a d ad a d ad  
+                   dd sd d ad a da sd a dasd  asd  asd as d sd  asd a d  d as  
+                   da sd  d a da  d ad a d  ad a d ad a d  d d a da d a da 
+                    d a sd asd as d s d as d asd as d s d sd as d as da da 
+                     dad da das da d a d asd  ad a da d ad a d ad a d ad    
+            </p>
+        </div>
+
+        <div class="myservices">
+            <h3>App Development</h3>
+            <p>dd sd d ad a da sd a dasd  asd  asd as d sd  asd a d  d as  
+                 da sd  d a da  d ad a d  ad a d ad a d  d d a da d a da 
+                  d a sd asd as d s d as d asd as d s d sd as d as da da 
+                   dad da das da d a d asd  ad a da d ad a d ad a d ad  
+                   dd sd d ad a da sd a dasd  asd  asd as d sd  asd a d  d as  
+                   da sd  d a da  d ad a d  ad a d ad a d  d d a da d a da 
+                    d a sd asd as d s d as d asd as d s d sd as d as da da 
+                     dad da das da d a d asd  ad a da d ad a d ad a d ad    
+            </p>
+        </div>
+    </section>
+    <footer>
+        <p>Help center +91-8765437654</p>
+    </footer>
+    
+</body>
+</html>

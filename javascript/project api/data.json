@@ -1,0 +1,158 @@
+{
+  "account": [
+    {
+      "id": 1,
+      "name": "Alex",
+      "mobile": "6537657265",
+      "eamil": "tilharspn7394@gmail.com",
+      "password": "123"
+    },
+    {
+      "name": "vishu",
+      "mobile": "9369117903",
+      "email": "tilharspn7394@gmail.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "name": "arvind",
+      "mobile": "8962716811",
+      "email": "arvind@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "name": "ankit",
+      "mobile": "7894561133",
+      "email": "ankit@gamil.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "harshit",
+      "mobile": "3277897898",
+      "email": "harshit@gmail.com",
+      "password": "123",
+      "id": 5
+    }
+  ],
+  "user": [
+    {
+      "name": "Apple",
+      "mobile": "123456789",
+      "adminid": "2",
+      "id": 1
+    },
+    {
+      "name": "arvind",
+      "mobile": "7894561133",
+      "adminid": "3",
+      "id": 2
+    },
+    {
+      "name": "vishu",
+      "mobile": "8798498798",
+      "adminid": "3",
+      "id": 3
+    },
+    {
+      "name": "sonu",
+      "mobile": "8798498798",
+      "adminid": "2",
+      "id": 4
+    },
+    {
+      "name": "ank",
+      "mobile": "98765234",
+      "adminid": "2",
+      "id": 5
+    },
+    {
+      "name": "ankit",
+      "mobile": "7894561133",
+      "adminid": "2",
+      "id": 6
+    },
+    {
+      "name": "vivek",
+      "mobile": "6987864987",
+      "adminid": "2",
+      "id": 7
+    },
+    {
+      "name": "arvind",
+      "mobile": "7894561133",
+      "adminid": "5",
+      "id": 8
+    },
+    {
+      "name": "arvind",
+      "mobile": "7894561133",
+      "adminid": "3",
+      "id": 9
+    },
+    {
+      "name": "arvind",
+      "mobile": "7894561133",
+      "adminid": "3",
+      "id": 10
+    }
+  ],
+  "product": [
+    {
+      "name": "apple ",
+      "price": "200",
+      "adminid": "2",
+      "id": 1
+    },
+    {
+      "name": "mango",
+      "price": "200",
+      "adminid": "3",
+      "id": 2
+    },
+    {
+      "name": "apple",
+      "price": "200",
+      "adminid": "2",
+      "id": 3
+    },
+    {
+      "name": "mango",
+      "price": "400",
+      "adminid": "2",
+      "id": 4
+    },
+    {
+      "name": "pan",
+      "price": "20",
+      "adminid": "2",
+      "id": 5
+    },
+    {
+      "name": "pan",
+      "price": "20",
+      "adminid": "3",
+      "id": 6
+    },
+    {
+      "name": "orange",
+      "price": "200",
+      "adminid": "2",
+      "id": 7
+    },
+    {
+      "name": "Apple",
+      "price": "200",
+      "adminid": "5",
+      "id": 8
+    },
+    {
+      "name": "pan",
+      "price": "200",
+      "adminid": "3",
+      "id": 9
+    }
+  ],
+  "contact": []
+}

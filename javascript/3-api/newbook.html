@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        const save=()=> {
+            let name=document.getElementById("bookname").value;
+            let price=document.getElementById("bookprice").value;
+            let author=document.getElementById("author").value;
+            let newitem={"bookname":name,"price":price,"author":author};
+            let url="http://localhost:3000/booklist";
+            let postdata={
+                headers:{'content-Type':'application/json'},
+                method : "POST",
+                body :JSON.stringify(newitem)
+            }
+            fetch(url,postdata)
+            .then(response=>response.json())
+            .then(iteminfo =>{
+               alert( name + " - save Sucsessfully !....");
+               window.location.href="index.html";
+            })
+        }
+
+    </script>
+</head>
+<body>
+    <table align="center" cellpadding="15">
+        <caption>
+            <h1> Enter Book Details</h1>
+        </caption>
+         <tr>
+            <th>Book Name </th>
+            <td><input type="text" id="bookname" size="40"/></td>
+         </tr> 
+         <tr>
+            <th>Book price </th>
+            <td><input type="text" id="bookprice" size="40"/></td>
+         </tr>
+         <tr>
+            <th>Book author </th>
+            <td><input type="text" id="author" size="40"/></td>
+         </tr>
+         <tr>
+            <th colspan="2">
+                <button onclick="save()"> Save book </button>
+                <br></br>
+                <a href="index.html">Back To List</a>
+            </th>
+         </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">                                                                                                                                                                                                                                                                   
+    <style>
+        body{
+            margin: 0px;
+        }
+        #mainmenu{
+            background:black;
+            margin: 0px;
+        }
+        #mainmenu li{
+           display: inline-block;
+           color: white;
+           padding: 15px 40px 15px;
+           font-size: 20px;
+           cursor: pointer;
+        }
+        #mainmenu li:hover{
+            background-color: blue;
+        }
+        .submenu li{
+            display: block !important;
+            margin-left: -40px !important;
+            font-size: 18px !important;
+
+        }
+        .submenu{
+            background: black;
+            position: absolute;
+            margin-left: -40px;
+            min-width: 200px;
+            margin-top: 14px !important;
+            display: none;
+
+        }
+        #mainmenu li:hover .submenu{
+            display: block;
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <ul id="mainmenu">
+        <li>Home</li>
+        <li>Our Services
+            <ul class="submenu">
+                <li>Marketing</li>
+                <li>App Design</li>
+                <li>Branding</li>
+                <li>Education</li>
+            </ul>
+        </li>
+        <li>About us</li>
+        <li>Techologies
+            <ul class="submenu">
+                <li>Mobile Techologies</li>
+                <li>Web Techologies</li>
+                <li>Desktop App</li>
+                <li>Frontend Techologies</li>
+            </ul>
+        </li>
+        <li>content Us</li>
+        <li>Brancges
+            <ul class="submenu">
+                <li>Bangalore</li>
+                <li>Mumbai</li>
+                <li>Delhi</li>
+                <li>pune</li>
+            </ul>
+        </li>
+    </ul>
+    
+</body>
+</html>

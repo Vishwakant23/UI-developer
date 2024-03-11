@@ -1,0 +1,69 @@
+npx create-react-app
+
+How to setop project
+    1. install 16+ version nodejd
+    2. run this command setup the environment
+        =>npm install -g create-react-app
+    3.  run this command to create new project
+        =>npx create-react-app projectl
+     where"project" is project folder name
+     Note- on success on above command , the final message  will show as "Happy Hacking"
+    4. open cmd in projectl folder 
+    5. start the react  development server using this command
+        =>npm start 
+    6. Browse the page project on - http://localhost:3000
+---------------------------------------------------------------------------------------------------------  
+    Component - The Component in react is like same like function in javascript.
+    h1 - tag (html)
+    h1 - selector (css)
+    h1 - element (js)
+    h1 - jsx element
+
+    JSX - javascript and XML
+    JSX - javascript + html tag + xml rules 
+---------------------------------------------------------------------------------------------------------
+    XML Rules
+        1. xml tags are user defined
+        2. xml tags are case sensitive
+        3. every xml document shoud have only one parent element
+
+---------------------------------------------------------------------------------------------------------
+    JSX Rules
+    =>if inside a Component more then 1 jsx element are rewuired then keep inside parent
+    jsx element
+    Example -
+            <div>
+                <h1> Abour Us </h1>
+                <p>same as sa a sa s s  aa s as a s as </p>
+                <p>sa s a s a s as  a s a sa  a s a sa </p>
+            </div>
+
+    =>The parent and child element can be use defined tag also
+    Examlple -
+            <xyz>
+                <h1> Abour Us </h1>
+                <p>same as sa a sa s s  aa s as a s as </p>
+                <p>sa s a s a s as  a s a sa  a s a sa </p>
+            </xyz>  
+
+     =>The parent and child element can be <> empty tag also
+    Examlple -
+            <>
+                <h1> Abour Us </h1>
+                <p>same as sa a sa s s  aa s as a s as </p>
+                <p>sa s a s a s as  a s a sa  a s a sa </p>
+            </> 
+
+
+     =>The parent and child element can be [] array tag also
+    Examlple -
+            [
+                <h1> Abour Us </h1>
+                <p>same as sa a sa s s  aa s as a s as </p>
+                <p>sa s a s a s as  a s a sa  a s a sa </p>
+            ]         
+---------------------------------------------------------------------------------------------------------            
+
+
+
+

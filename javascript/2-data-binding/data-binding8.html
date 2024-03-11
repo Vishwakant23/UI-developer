@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data-binding 8</title>
+    <style>
+        h1{color: blue; font-size: 50px;}
+        p{color: red; font-size: 30px;}
+    </style>
+    <script>
+        let itemlist=[
+            {name:"apple", price:300, qty:200, seller:"Ganesh"},
+            {name:"mango", price:100, qty:300, seller:"Mahesh"},
+            {name:"banana", price:50, qty:500, seller:"alex"}
+        ];
+
+        const getinfo=(index)=>{
+            let data ="<h1>Item Details </h1>";
+            data = data +"<p>"+itemlist[index].name+"</p>"
+            data = data +"<p>"+itemlist[index].price+"</p>"
+            data = data +"<p>"+itemlist[index].qty+"</p>"
+            data = data +"<p>"+itemlist[index].seller+"</p>"
+            document.getElementById("deletes").innerHTML=data;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Ovject & Array of Object</h1>
+    <button onclick="getinfo(0)">Apple</button>
+    <button onclick="getinfo(1)">Mango</button>
+    <button onclick="getinfo(2)">Banana</button>
+
+    <section id="deletes">NO Data yet....</section>
+    
+    
+</body>
+</html>

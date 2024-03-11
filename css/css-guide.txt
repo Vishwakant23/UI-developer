@@ -1,0 +1,206 @@
+ 2-aug-2023
+ Html has clllections of tags with limites property and value.
+ CSS - Cascading Style Sheet.
+       It has collections of pre- defined property and values.
+       It use to change look and feel of Html
+
+
+ How it work ?
+ Respnsive Webpage = HTML (tages>) + CSS (property & values)  
+
+
+ Type of CSS?
+   1. inline CSS - only of learning  perpos
+   2. nternal CSS - 10%
+   3. external CSS- 85%
+   4. import CSS   - 5%
+
+ Syntex of inline css?
+   <p style="property:value; property2:value2; property3:value3;">
+   Bnagalore
+   </p> 
+    Example 
+    <p style="height:200px; width:300px; color:red;">
+   Bnagalore
+   </p> 
+    page1.html
+
+
+   => problom in line css?
+       1. it is one to one as ( write css code 1 time use only one time )
+       2. due to one to one duplicate will happen
+       3. duplicate will make file too haevy
+       4. heavy file take long tme to load.
+       5. slow page loadding  may mad experience to user
+       6. ocde modification will be complex 
+       7. google reject from serach console due to slow loadding
+       8. it consume more internet data. 
+------------------------------------------------------------------------
+
+    => internal css?
+      it is 1 to many .( write css code 1 time and use it many time)
+      To write css code 1 to many the following methods are given
+       1. css for tag name - example1.html
+         Example
+          section{
+            width: 46%;
+            height: 150px;
+            margin: 2%;
+            background-color: orangered;
+            float: left;
+            font-size: 50px;
+        }
+-------------------------------------------------------------------------        
+       2. css for tag group - example2.html
+         Example
+            p, div, section{
+            text-align: center;
+            font-style: italic;    
+        }
+-------------------------------------------------------------------------
+       3. css for id - example3.html
+        Example
+            #block1{
+            margin: 2%;
+            background: skyblue;
+            height: 100px;
+            text-align: center;
+            font-size: 70px;
+        }
+-------------------------------------------------------------------------        
+       4. css for class - example4.html
+       Example
+           .block2{
+            margin: 2%;
+            background: orange;
+            height: 400px;
+            text-align: center;
+            font-size: 70px;
+            width: 20%;
+            float: left;
+        }
+-------------------------------------------------------------------------        
+       5. css by attribute - example5.html
+       Example
+          input[type="email"]{
+          height: 30px;
+          font-size: 22px;
+          width: 600px;
+    }
+-------------------------------------------------------------------------       
+       6. css for parent & child tag/selector - example6.html
+        Example
+           #xyz ul li a{
+            color: red;
+            font-size: 30px;
+            text-decoration: none;
+
+        }
+--------------------------------------------------------------------------        
+
+
+     Syntex-
+       selector{
+        property:value;
+        property2:value;
+        property3:value;
+       }  
+      Example
+         p{
+          color:red;
+          font-size:30px;
+          background:red;
+          height:300px;
+          width:200px;
+         }
+
+ => List of property and value
+
+      height - 3 type
+           height:100px;  - it is fixed for 100px
+           min-height:100px - the min-height text mex based on contents
+           height:auto; - height is  filly based on contents
+
+      width -4 type
+          width:px - it is fixed  width in all size of window
+          width:% - it will fit in all size of window
+          min-width:px , % - 
+          max-width:px ,%   
+          
+      background -9 type - for background color
+          background:red;
+          background:color:red;
+          background:color:rgb(100, 59, 70)  
+          background:color:rgba(100, 59, 70 ,0.5) 
+          background-image:url('1.jpg');
+          background-image:linear-gradient( red, green, blue);
+          background-image:linear-gradient( to left red, green, blue);
+          background-image:linear-gradient( to right red, green, blue);
+          background-image:linear-gradient( to top red, green, blue);
+      
+------------------------------------------------------------------------------- 
+      border 
+         type of border
+          -> sloid
+          -> dotted
+          -> dashed
+          -> double
+          -> inset
+          -> outset
+          -> groove
+          -> ridge
+      decoration of border 
+            border : it apply all side
+            border-bottom:
+            border-left:
+            border-right:     
+-------------------------------------------------------------------------------  
+  
+      box- shadow:from-left from-top density color    
+ -------------------------------------------------------------------------------
+
+      display - it control the scope and visiblity of element
+          display:non; - in hide the element
+          display:inline - it convert from block  line level element to inline element
+                            the width property will not work
+          display:inline-block - it convert from block  line level element to inline element
+                            the width property will  work            
+          display:grid - it devide the element in rows and colums
+          display:flex - it convert from block  level element to inline element
+          
+---------------------------------------------------------------------------------          
+
+           
+
+
+      width - 4 type  
+      background - 9 type - for background color 
+      color - for text color 
+      float - it convert form block level tag to inline 
+          float:left - it print element form left to right
+          float:right- it print element from right to left
+    margin - it apply space 
+        margin:auto; - it print in center
+        margin:30px: - it apply 30px gap from all side( top, left, right, bottom)
+        margin-left:
+        margin-right:
+        margin-bottom:
+        margin-top:
+
+        margin:top  left+right bottom      
+            
+          p{ } - css for tag name
+          p,div,h1 {} - tag group
+          #abc{ } - css by id
+          .xyz{ } - css using class
+          div p b { } - css for parent and child
+          input[type="file"]{} - css using attribute
+------------------------------------------------------------------------
+    padding - it apply space inside of tag.
+        padding :30px - all side 30px
+        padding-top:
+        padding-bottom:
+        padding-left:
+        padding-right:
+        padding: top left-right bottom
+------------------------------------------------------------------------        

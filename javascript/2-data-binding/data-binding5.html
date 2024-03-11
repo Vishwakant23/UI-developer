@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-Binding5</title>
+    <style>
+        header{
+            padding: 20px;
+            text-align: center;
+        }
+        button:focus{
+            background-color: red;
+            color: white;
+            border: none;
+        }
+        p{
+            display: inline-block;
+            font-size: 28px;
+            color: blue;
+            width: 24%;
+            text-align: center;
+            /* margin: 1%; */
+
+        }
+        #container{
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+    <script>
+        const one=()=>{
+            let data="";
+            for(let i=1; i<=10; i++)
+            {
+                data = data +"<p>" +i+"</p>";
+            }
+            // alert(data);
+            document.getElementById("container").innerHTML=data;
+        }
+
+        const two=()=>{
+            let data="";
+            for(let i=11; i<=20; i++)
+            {
+                data=data+"<p>" +i+"</p>";
+            }
+            document.getElementById("container").innerHTML=data;
+            
+        }
+
+        const three=()=>{
+            let data="";
+            for(let i=1; i<=40; i=i+2)
+            {
+                data=data+"<p>" +i+"</p>";
+            }
+            document.getElementById("container").innerHTML=data;
+            
+        }
+
+        const four=()=>{
+            let data="";
+            for(let i=2; i<=40; i=i+2)
+            {
+                data=data+"<p>" +i+"</p>";
+            }
+            document.getElementById("container").innerHTML=data;
+            
+        }
+
+        const five=()=>{
+            let booklist=["html", "css", "bootstrap","javascript","react","angular",];
+            let data="";
+            booklist.map((bookname,index)=>{
+                data = data +"<p>"+ bookname +"</p>";
+
+            })
+            document.getElementById("container").innerHTML=data;
+
+        }
+
+        const six=()=>{
+            let Userlist=["Ganesh", "Mahesh", "Vishu","Punit","Deva","Mohit","Raj","Sumit"];
+            let data ="";
+            Userlist.forEach((fullname, index)=>{
+                data = data +"<p>"+ fullname +"</p>";
+            })
+            document.getElementById("container").innerHTML=data;
+        }
+
+        const seven=()=>{
+            let Citylist=["Bangalore","Pune","Mumbai","Bhopal","Agra","Kanpur"];
+            let data="";
+            for(let i=0; i<=citylist.length; i++){
+                data = data +"<p>"+ fullname +"</p>";
+            }
+            document.getElementById("container").innerHTML=data;
+            
+        }
+
+
+
+    </script>
+</head>
+<body onload="one()">
+    <header align="center">
+        <h1>JavaScript Loop Example</h1>
+        <button onclick="one()">Print 1 to 10 </button>
+        <button onclick="two()">Print 11 to 20 </button>
+        <button onclick="three()">Print 1 to 40 Odd Number </button>
+        <button onclick="four()">Print 1 to 40  Even No</button>
+        <button onclick="five()">Book List</button>
+        <button onclick="six()">UserList</button>
+        <button onclick="seven()">CityList</button>
+    </header>
+    <section id="container"></section>
+    
+</body>
+</html>

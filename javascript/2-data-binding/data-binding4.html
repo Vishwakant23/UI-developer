@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:hover{
+            background-color: black;
+            color: white;
+            border: none;
+        }
+    </style>
+    <script>
+        let oldcolor="white";
+        const applycolor =(colorname)=>{
+            // alert(colorname);
+            document.getElementById("pagetitle").style.color=colorname;
+            document.getElementById("container").style.backgroundColor=oldcolor;
+            oldcolor=colorname;
+            
+        }
+
+    </script>
+</head>
+<body id="container">
+    <h1 id="pagetitle"> Apply CSS Using JavaScript</h1>
+    <button onclick="applycolor('red')">Red</button>
+    <button  onclick="applycolor('green')">Green</button>
+    <button  onclick="applycolor('blue')">Blue</button>
+    <button  onclick="applycolor('orange')">Orange</button>
+    <button  onclick="applycolor('pink')">pink</button>
+    
+</body>
+</html>

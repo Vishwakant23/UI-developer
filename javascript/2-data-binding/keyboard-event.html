@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard-Event</title>
+    <script>
+        const one = (data)=>{
+            console.log(data);
+
+        }
+
+    </script>
+</head>
+<body onload="one('Welcome back..... page is loaded')">
+    <h1>Keyboard Event</h1>
+    <p>
+        onkeypress :
+         <input type="text" value="APPLE" onkeypress="one(this.value)"/>
+    </p>
+    
+    <p>
+        onkeydown :
+         <input type="text" value="APPLE" onkeydown="one(this.value)"/>
+    </p>
+    <p>
+        onkeyup :
+         <input type="text" value="APPLE" onkeyup="one(this.value)"/>
+    </p>
+    <p>
+        onfocus :
+         <input type="text" value="APPLE" onfocus="one(this.value)"/>
+    </p>
+    <p>
+        onblur :
+         <input type="text" value="APPLE" onblur="one(this.value)"/>
+    </p>
+</body>
+</html>

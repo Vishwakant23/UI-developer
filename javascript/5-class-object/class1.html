@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            text-align: center;
+            padding: 20px;
+
+        }
+        #container{
+            width: 80%;
+            margin: auto;
+        }
+        h1{
+            font-size: 60px;
+            color: green;
+            text-align: center;
+        }
+        p{
+            font-size: 30px;
+            width: 20%;
+            margin: 2%;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        class company{
+            constructor(){
+                this.product=["Paper","Pen","Printer","Scanner"];
+                this.user=["Alex","Ganedh","Suman","Vishu","Mohit"];
+                this.city=["Bangalore","Pune","Delhi","Patna","Chennai",];
+            }
+
+            gethome =()=>{
+                let msg ="<h1> Welcome to Home </h1>";
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            getabout =()=>{
+                let msg ="<h1> About us </h1>";
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            getproduct =()=>{
+                let msg ="<h1> Total Product :"+this.product.length+"</h1>";
+                this.product.map((pname,index)=>{
+                    msg = msg +"<p>" + pname + "</p>";
+                })
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            getuser =()=>{
+                let msg ="<h1> Total Users :"+this.user.length+"</h1>";
+                this.user.map((uname,index)=>{
+                    msg = msg +"<p>" + uname + "</p>";
+                })
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            getcity =()=>{
+                let msg ="<h1> Total City :"+this.city.length+"</h1>";
+                this.city.map((cname,index)=>{
+                    msg = msg +"<p>" + cname + "</p>";
+                })
+                document.getElementById("container").innerHTML=msg;
+            }
+
+
+        }
+        const obj1 =new company();//object creation of company class
+        
+    </script>
+</head>
+<body>
+    <header>
+    <button onclick=" obj1.gethome()">Home</button>
+    <button onclick=" obj1.getabout()">About</button>
+    <button onclick=" obj1.getproduct()">Product list</button>
+    <button onclick=" obj1.getuser()">User list</button>
+    <button onclick=" obj1.getcity()">City list</button>
+    </header>
+
+    <section id="container">
+
+    </section>
+    
+</body>
+</html>

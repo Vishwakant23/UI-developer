@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            text-align: center;
+            padding: 20px;
+
+        }
+        section{
+            width: 80%;
+            margin: auto;
+        }
+        h1{
+            font-size: 60px;
+            color: green;
+            text-align: center;
+        }
+        p{
+            font-size: 25px;
+            width: 20%;
+            margin: 2%;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        class Vendor{
+            constructor(){
+                this.product = ["paper","pen","printer","scanner"];
+            }
+        }
+
+        class Seller extends Vendor{
+            constructor(){
+                super();
+                this.customer = ["Alex","Ganedh","Suman","Vishu","Mohit"];
+
+            }
+
+            getproduct = () =>{
+                let msg ="<h1> Total Product :"+this.product.length+"</h1>";
+                this.product.map((pname,index)=>{
+                    msg = msg +"<p>" + pname + "</p>";
+                })
+                document.getElementById("pdata").innerHTML=msg;
+
+            }
+
+            getcustomer = () =>{
+                let msg ="<h1> Total Customer :"+this.customer.length+"</h1>";
+                this.customer.map((uname,index)=>{
+                    msg = msg +"<p>" + uname +"</p>";
+                })
+                document.getElementById("cdata").innerHTML=msg;
+                
+            }
+        }
+
+        const obj2 = new Seller();
+        
+    </script>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Class Object With Inheritance</h1>
+        <button onclick="obj2.getproduct()">Parent  Class Data</button>
+        <button onclick="obj2.getcustomer()">Child Class Data</button>
+    </header>
+    <section id="pdata"></section>
+    <section id="cdata"></section>
+    
+</body>
+</html>

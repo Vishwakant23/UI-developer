@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="icon/css/all.css"/>
+        <script>
+            if(localStorage.getItem("userid") === null )
+            {
+               window.location.href="login.html"; 
+            }
+
+            const logout = () =>{
+                localStorage.clear();
+                window.location.href="login.html";
+            }
+
+            const getname = () =>{
+                document.getElementById("loginname").innerText = "Welcome - "+ localStorage.getItem("fullname");
+            }
+
+            const gethome = async() =>{
+                let totaluser = 0;
+                let product = 0;
+                let userurl = "http://localhost:1234/user?adminid="+userid;
+                let producturl = "http://localhost:1234/product?adminid="+userid;
+
+                await fetch (userurl)
+                .then(response=>response.json())
+                .then(userArray=>{
+                    totaluser = userArray.length;
+
+                })
+
+                 await fetch (producturl)
+                .then(response=>response.json())
+                .then(proArray=>{
+                    product = proArray.length;
+                    
+                })
+                    let data =  "<div class='text-center m-4 border rounded'>";
+                    data = data+ "<h1 class='text-center mb-4 '> My Dashboard </h1>";
+                    data = data + "<h3 class='mb-4'> Total Users : "+totaluser+ "</h3>";
+                    data = data + "<h3> Total Products : "+product+ "</h3>";
+                    data = data + "</div>";
+
+                    document.getElementById("ajaxdata").innerHTML=data;
+             
+            }
+
+            const newuser = () =>{
+                    let data = "<h1 class='text-center mb-4'> New User </h1>";
+                    data += "<p> Name  <input type='text' id='fname' class='form-control'/></p>";
+                    data += "<p> Mobile  <input type='text' id='mobile' class='form-control'/></p>";
+                    data += "<p class='text-center'>  <button class='btn btn-primary m-3' onclick='saveuser()'>Save</button> </p>";
+                    document.getElementById("ajaxdata").innerHTML = data;
+            }
+
+            let userid = localStorage.getItem("userid");
+
+            const saveuser = () =>{
+                let fullname = document.getElementById("fname").value;
+                let mobileno = document.getElementById("mobile").value;
+
+                let url = "http://localhost:1234/user";
+                let userdata = {name:fullname, mobile:mobileno, adminid:userid};
+                let postdata = {
+                    headers : {'Content-Type':'application/json'},
+                    method : "POST",
+                    body : JSON.stringify(userdata)
+                };
+                fetch(url, postdata)
+                .then(response=>response.json())
+                .then(userinfo=>{
+                    alert("Record Save Successfully !");
+                    document.getElementById("fname").value="";
+                    document.getElementById("mobile").value="";
+                })
+            }
+
+
+            const getuser = () =>{
+                let data = "<h1 class='text-success text-center mt-4'> Available Users </h1>";
+                
+                let url = "http://localhost:1234/user?adminid="+userid;
+                
+                fetch(url)
+                .then(response=>response.json())
+                .then(userArray=>{
+                    userArray.map((user, index)=>{
+                        data = data + "<div class='m-4 p-3 border rounded'>";
+                        data = data + "<p> Full Name : "+ user.name + "</p>";
+                        data = data + "<p> Mobile No : "+ user.mobile + "</p>";
+                        data = data + "</div>";
+                    })
+                    document.getElementById("ajaxdata").innerHTML = data;
+                })
+            }
+
+            const newproduct = () =>{
+                    let data = "<h1 class='text-center mb-4'> New Product </h1>";
+                    data += "<p> Name  <input type='text' id='pname' class='form-control'/></p>";
+                    data += "<p> Price  <input type='text' id='price' class='form-control'/></p>";
+                    data += "<p class='text-center'>  <button class='btn btn-primary m-3' onclick='saveproduct()'>Save</button> </p>";
+                    document.getElementById("ajaxdata").innerHTML = data;
+            }
+
+            const saveproduct = () =>{
+                let productname = document.getElementById("pname").value;
+                let productprice = document.getElementById("price").value;
+
+                let url = "http://localhost:1234/product";
+                let userdata = {name:productname, price:productprice, adminid:userid};
+                let postdata = {
+                    headers : {'Content-Type':'application/json'},
+                    method : "POST",
+                    body : JSON.stringify(userdata)
+                };
+                fetch(url, postdata)
+                .then(response=>response.json())
+                .then(userinfo=>{
+                    alert("Record Save Successfully !");
+                    document.getElementById("pname").value="";
+                    document.getElementById("price").value="";
+                })
+            }
+
+            const getproduct = () =>{
+                let data = "<h1 class='text-success text-center mt-4'> Product List </h1>";
+                
+                let url = "http://localhost:1234/product?adminid="+userid;
+                
+                fetch(url)
+                .then(response=>response.json())
+                .then(productArray=>{
+                    productArray.map((product, index)=>{
+                        data = data + "<div class='m-4 p-3 border rounded'>";
+                        data = data + "<p> Item Name : "+ product.name + "</p>";
+                        data = data + "<p>  Price : "+ product.price + "</p>";
+                        data = data + "</div>";
+                    })
+                    document.getElementById("ajaxdata").innerHTML = data;
+                })
+
+            }
+
+           
+
+        </script>
+    </head>
+    <body onload="getname(), gethome()">
+        <div class="container mt-4 mb-4">
+            <div class="row">
+                <div class="col-lg-4 text-center">
+                    <h1 class="text-danger"> AJAX </h1>
+                    <small class="text-primary"> Communicate Without Reload </small>
+                </div>
+                <div class="col-lg-8 text-end">
+                    <div class="btn-group">
+                        <button class="btn btn-danger" onclick="gethome()"> 
+                            <i class="fa fa-home"></i> Dashboard 
+                        </button>
+                        <button class="btn btn-success" onclick="newuser()"> 
+                            <i class="fa fa-user-plus"></i> New User 
+                        </button>
+                        <button class="btn btn-success" onclick="getuser()"> 
+                            <i class="fa fa-table"></i> User List
+                        </button>
+                        <button class="btn btn-warning" onclick="newproduct()"> 
+                            <i class="fa fa-suitcase"></i> New  Product  
+                        </button>
+                        <button class="btn btn-warning" onclick="getproduct()"> 
+                            <i class="fa fa-suitcase"></i> Product List 
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="list-group">
+                        <li class="list-group-item active"> Our Services </li>
+                        <li class="list-group-item"> Sales & Marketing </li>
+                        <li class="list-group-item"> Education </li>
+                        <li class="list-group-item">Employment </li>
+                        <li class="list-group-item"> Customer Support </li>
+                        <li class="list-group-item"> Hire & Deploy </li>
+                    </ul>
+
+                    <div class="card mt-4 border-0 shadow-lg">
+                        <div class="card-header bg-info text-white"> Office Address </div>
+                        <div class="card-body">
+                            <p> firstenquiry Digital Media </p>
+                            <p> #123, 2nd Floor, Outer ring road marathahalli bangalore 560037</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center p-4 border rounded mt-4">
+                        <p id="loginname"> </p>
+                        <button class="btn btn-danger" onclick="logout()"> 
+                            <i class="fa fa-power-off"></i> Logout 
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-7" id="ajaxdata"></div>
+                <div class="col-lg-2">
+                    <div class="p-4 text-center shadow-lg">
+                        <i class="fa fa-bell fa-4x text-warning fa-shake"></i>
+                        <p> AJAX - Asynchronous JavaScript & XML </p>
+                        <p> It use to fetch data from given URL without reloading the current page </p>
+                        <p> The Ajax Communicate using Unsecure method </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 p-5">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="#" class="pe-5 text-decoration-none"> Contact Us </a>
+                    <a href="#" class="pe-5 text-decoration-none"> Chat Support </a>
+                    <a href="#" class="pe-5 text-decoration-none"> Terms of Use </a>
+                    <a href="#" class="pe-5 text-decoration-none"> Privacy & Policy </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

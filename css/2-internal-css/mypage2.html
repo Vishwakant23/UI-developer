@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #mynav{
+            margin: 0px;
+            background-image: linear-gradient(to left,rgb(14, 14, 15), rgb(28, 4, 248), rgb(245, 213, 213) );
+            display: flex;
+            flex-wrap: wrap;
+            top: 0px;
+            position: sticky;
+
+        }
+        #mynav li{
+            padding: 10px 19px 18px;
+            list-style-type: none;
+            
+
+        }
+        #mynav li a{
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+            
+        }
+        #mynav li:hover{
+            background-color: brown;
+            transition: 1s linear;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        section{
+            display: grid;
+            grid-template-columns: 70% 10% 10% 10%;
+            width: 80%; 
+            margin: auto;
+            font-size: 17px;
+        }
+        #rightinfo{
+            text-align: right;
+            /* background-color: blue; */
+            
+        }
+        #aa{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+        }
+        #aa div{
+            /* border: 1px solid black; */
+            margin-bottom: 10px;
+        }
+        #car img{
+            height: 200px;
+            width: 70%;
+            margin-left: 100px; 
+        }
+        #aa h3{
+            color: red;
+        }
+        table tr th{
+            color: red;
+
+        }
+        .black1{
+            height: 30px;
+            width: 100px;
+            background-color: blue;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            color: white;
+            cursor: pointer;
+        }
+        .black2{
+            height: 30px;
+            width: 121px;
+            background-color: rgb(125, 125, 238);
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            color: white;
+            cursor: pointer;
+        }
+        .black3{
+            height: 30px;
+            width: 125px;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            color: white;
+            background-color: rgb(7, 128, 23);
+            cursor: pointer;
+        }
+       
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <ul id="mynav">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">User</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Book</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">M-L Routing</a></li>
+            <li><a href="#">Module</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">API-Get-Post</a></li>
+            <li><a href="#">Reactive Form</a></li>
+            <li><a href="#">Welcome</a></li>
+        </ul>
+    </header>
+    <section>
+        <h1 id="leftinfo">Shop parent component</h1>
+        <p id="rightinfo"><button class="black1">My Staff</button></p>
+        <p id="rightinfo"><button class="black2">My Product</button></p>
+        <p id="rightinfo"><button class="black3">Today invoic</button></p>
+    </section>
+    <h1 style="text-align: center; color: blue;">23 - Available Car</h1>
+    <section id="aa">
+        <div>
+            <h3>Toyota Camry</h3>
+            <h5>Price:2300000</h5>
+            <h5>Fule: Petrol</h5>
+            <h5>Version:xl</h5>
+            
+        </div>
+        <div id="car">
+            <!-- <h1 class="Sedan">Sedan</h1> -->
+            <img src="c3.jpg">
+        </div>
+        <div>
+            
+            <table cellpadding="20px" border="1px" align="center">
+                <tr>
+                    <th>Si</th>
+                    <th>Service</th>
+                    <th>Service Cost</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2017-12-10</td>
+                    <td>2425</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2017-12-10</td>
+                    <td>1976</td>
+                </tr>
+            </table>
+        </div>
+    </section><hr>
+    <!-- <h1 style="text-align: center;">23 Available Car</h1> -->
+    <section id="aa">
+        <div>
+            <h3>Toyota Camry</h3>
+            <h5>Price:2300000</h5>
+            <h5>Fule: Petrol</h5>
+            <h5>Version:xl</h5>
+            
+        </div>
+        <div id="car">
+            <!-- <h1 class="Sedan">Sedan</h1> -->
+            <img src="c4.jpeg">
+        </div>
+        <div>
+            
+            <table cellpadding="20px" border="1px" align="center">
+                <tr>
+                    <th>Si</th>
+                    <th>Service</th>
+                    <th>Service Cost</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2017-12-10</td>
+                    <td>2425</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2017-12-10</td>
+                    <td>1976</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+  
+   
+    
+</body>
+</html>

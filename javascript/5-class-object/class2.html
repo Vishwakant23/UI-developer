@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            text-align: center;
+            padding: 20px;
+
+        }
+        #container{
+            width: 80%;
+            margin: auto;
+        }
+        h1{
+            font-size: 60px;
+            color: green;
+            text-align: center;
+        }
+        p{
+            font-size: 30px;
+            width: 20%;
+            margin: 2%;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        class company{
+            constructor(){
+                this.product=["Paper","Pen","Printer","Scanner"];
+                this.user=["Alex","Ganedh","Suman","Vishu","Mohit"];
+                this.city=["Bangalore","Pune","Delhi","Patna","Chennai",];
+            }
+
+            gethome =()=>{
+                let msg ="<h1> Welcome to Home </h1>";
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            getabout =()=>{
+                let msg ="<h1> About us </h1>";
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            getproduct =()=>{
+                let msg ="<h1> Total Product :"+this.product.length+"</h1>";
+                this.product.map((pname,index)=>{
+                    msg = msg +"<p>" + pname + "<br/> <button onclick='obj1.delprocuct("+ index +")'>delete</button> </p>";
+                })
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            delproduct=(index)=>{
+                this.product.splice(index,1);
+                this.getproduct();
+            }
+
+            getuser =()=>{
+                let msg ="<h1> Total Users :"+this.user.length+"</h1>";
+                this.user.map((uname,index)=>{
+                    msg = msg +"<p>" + uname + "<br/> <button onclick='obj1.deluser("+ index +")'>delete</button> </p>";
+                })
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            deluser=(index)=>{
+                this.user.splice(index,1);
+                this.getuser();
+            }
+
+            getcity =()=>{
+                let msg ="<h1> Total City :"+this.city.length+"</h1>";
+                this.city.map((cname,index)=>{
+                    msg = msg +"<p>" + cname + "<br/> <button onclick='obj1.delcity("+ index +")'>delete</button> </p>";
+                })
+                document.getElementById("container").innerHTML=msg;
+            }
+
+            delcity=(index)=>{
+                this.city.splice(index,1);
+                this.getcity();
+            }
+
+            saveproduct=()=>{
+                let newrecord = document.getElementById("newrecord").value;
+                this.product.unshift(newrecord);
+                document.getElementById("newrecord").value="";
+                this.getproduct();
+            }
+
+            saveuser=()=>{
+                let newrecord = document.getElementById("newrecord").value;
+                this.user.unshift(newrecord);
+                document.getElementById("newrecord").value="";
+                this.getuser();
+            }
+
+            savecity=()=>{
+                let newrecord = document.getElementById("newrecord").value;
+                this.city.unshift(newrecord);
+                document.getElementById("newrecord").value="";
+                this.getcity();
+            }
+
+
+
+
+        }
+        const obj1 =new company();//object creation of company class
+        
+    </script>
+</head>
+<body>
+    <header>
+    <button onclick=" obj1.gethome()">Home</button>
+    <button onclick=" obj1.getabout()">About</button>
+    <button onclick=" obj1.getproduct()">Product list</button>
+    <button onclick=" obj1.getuser()">User list</button>
+    <button onclick=" obj1.getcity()">City list</button>
+    </header>
+
+    <div align="center">
+        Enter New Record : <input type="text" id="newrecord"/>
+        <button onclick="obj1.saveproduct()">Svae Product</button>
+        <button onclick="obj1.saveuser()">Save User</button>
+        <button onclick="obj1.savecity()">Save City</button>
+    </div>
+
+    <section id="container">
+
+    </section>
+    
+</body>
+</html>

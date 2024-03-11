@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 150px;
+            color: red;
+            text-align: center;
+        }
+        section{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+          
+        }
+        section div{
+            font-size: 25px;
+            color: blue;
+            margin: 10px;
+            padding: 30px 0px 30px;
+        }
+        /* media query for extra samll device  */
+        @media screen and (min-width:1px) and (max-width:650px) {
+            h1{
+                font-size: 40px;
+                color: green;
+            }
+            section{
+                grid-template-columns: auto;
+                
+            }
+           #pagetitle{
+            display: none;
+
+            }
+        }
+        /* media query for samll device  */
+        @media screen and (min-width:651px) and (max-width:850px) {
+            h1{
+                font-size: 60px;
+                color: rgb(0, 2, 128);
+            }
+            section{
+                grid-template-columns: auto auto;
+                
+            }
+        }
+          /* media query for  medium device  */
+          @media screen and (min-width:851px) and (max-width:1100px) {
+            h1{
+                font-size: 60px;
+                color: rgb(128, 0, 107);
+            }
+            section{
+                grid-template-columns: auto auto auto;
+                
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 id="pagetitle"> CSS  Media Query</h1>
+    <h1>567890-45678</h1>
+    <section>
+            <div>Bangalore</div>
+            <div>Mumbai</div>
+            <div>pune</div>
+            <div>delhi</div>
+            <div>Chennai</div>
+            <div>kolkata</div>
+            <div>patna</div>
+            <div>Website Design</div>
+            <div>Digital Marketing</div>
+            <div>Eduation</div>
+            <div>Education</div>
+            <div>Website Design</div>
+    </section>
+    
+</body>
+</html>

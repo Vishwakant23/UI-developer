@@ -1,0 +1,261 @@
+
+bootstrap is libary od css.
+the bootstrap is first framework of html css & js for responsive webpage design.
+
+ bootstrap came in market in 2011 by twitter .com
+ bootstrap grid system devided all type device in 6 categories
+based on screen width
+
+1. extra small                = screen width 1px to 576px
+2. small                      = screen width 577px to 768px
+3. medium                     = screen width 769px to 992px
+4. large                      = screen width 992px to 1200px
+5. extra large                = screen width 1201px to 1400px
+6. extra extra large           = screen width >=1401
+-------------------------------------------------------------------------------------------------------------
+
+The grid system has given 12 css classes for each type of device
+    1. extra small 
+        .col-1
+        .col-2
+        .col-3
+        .col-4
+        .col-5
+        .col-6
+        .col-7
+        .col-8
+        .col-9
+        .col-10
+        .col-11
+        .col-12
+-----------------------------
+    2. small  
+        .col-sm-1
+        .col-sm-2
+        .col-sm-3
+        .col-sm-4
+        .col-sm-5
+        .col-sm-6
+        .col-sm-7
+        .col-sm-8
+        .col-sm-9
+        .col-sm-10
+        .col-sm-11
+        .col-sm-12
+------------------------------- 
+    3. medium
+        .col-md-1
+        .col-md-2
+        .col-md-3
+        .col-md-4
+        .col-md-5
+        .col-md-6
+        .col-md-7
+        .col-md-8
+        .col-md-9
+        .col-md-10
+        .col-md-11
+        .col-md-12
+--------------------------------
+    4. large
+        .col-lg-1    
+        .col-lg-2     
+        .col-lg-3 
+        .col-lg-4 
+        .col-lg-5 
+        .col-lg-6 
+        .col-lg-7 
+        .col-lg-8 
+        .col-lg-9 
+        .col-lg-10 
+        .col-lg-11
+        .col-lg-12
+----------------------------------
+    5. extra large 
+        .col-xl-1
+        .col-xl-2
+        .col-xl-3
+        .col-xl-4
+        .col-xl-5
+        .col-xl-6
+        .col-xl-7
+        .col-xl-8
+        .col-xl-9
+        .col-xl-10
+        .col-xl-11
+        .col-xl-12
+----------------------------------
+    6. extra extra large 
+        .col-xxl-1
+        .col-xxl-2
+        .col-xxxl-3
+        .col-xxl-4
+        .col-xxl-5
+        .col-xxl-6
+        .col-xxl-7
+        .col-xxxl-8
+        .col-xxl-9
+        .col-xxl-10
+        .col-xxl-11
+        .col-xxl-12
+
+===============72 Classes in Grid system==================   
+
+
+    Follow These Steps While creatinfg webpage using bootstrap libary
+        1. link to bootstrap.css file in head secton
+        2. use body tag.
+        3. inside body tag use These classes
+            .container - it  has margin form left and right
+            .container-fluid- it has no margin  - it cover 100% width
+
+        4. inside .container or .container-fluid follow  the classes
+            .row 
+        5. inside row create colums min 1 max 12 using above 72 classes.
+
+
+------------------------------------------------------------------------------------------------------------
+    As.
+         body =>container =>row =>colums(1,12)  
+
+------------------------------------------------------------------------------------------------------------
+
+    Classes for background color
+        .bg-primary     -blue
+        .bg-danger      -red
+        .bg-info        -skyblue
+        .bg-success     -green
+        .bg-warring     -yellow
+        .bg-secondary   -grey
+        .bg-white       -white
+        .bg-light       -light white
+
+------------------------------------------------------------------------------------------------------------
+    Classes for text color
+        .text-primary     -blue
+        .text-danger      -red
+        .text-info        -skyblue
+        .text-success     -green
+        .text-warring     -yellow
+        .text-secondary   -grey
+        .text-white       -white
+        .text-light       -light white
+
+------------------------------------------------------------------------------------------------------------
+
+    Classes for radius
+        .rounded         -less radius
+        .rounded-circle  -it had 50% radius
+
+------------------------------------------------------------------------------------------------------------
+    Classes for shadow
+        .shadow-sm
+        .shadow
+        .shadow-lg
+
+------------------------------------------------------------------------------------------------------------
+     Classes for margin and padding
+
+        t=>      top
+        b=>      bootom
+        l(s)=>   left ->Start
+        r(e)=>   right ->end
+
+        1 =>4px
+        2 =>8px
+        3 =>16px
+        4 =>24px
+        5 =>48px
+
+        m =>margin
+        p =>padding
+
+    Combination for margin
+
+        .m-1 , .m-2 , .m-3 , .m-4 , .m-5
+        .ms-1 , .ms-2 , .ms-3 , .ms-4 , .ms-5
+        .me-1 , .me-2 , .me-3 , .me-4 , .me-5
+        .mt-1 , .mt-2 , .mt-3 , .mt-4 , .mt-5
+        .mb-1 , .mb-2 , .mb-3 , .mb-4 , .mb-5
+
+     Combination for padding
+
+        .p-1 , .p-2 , .m-3 , .p-4 , .p-5
+        .ps-1 , .ps-2 , .ps-3 , .ps-4 , .ps-5
+        .pe-1 , .pe-2 , .pe-3 , .pe-4 , .pe-5
+        .pt-1 , .pt-2 , .pt-3 , .pt-4 , .pt-5
+        .pb-1 , .pb-2 , .pb-3 , .pb-4 , .pb-5
+
+============================================================================================================
+
+    Classes for image
+        .ing-fluid
+        .ing-thumbnail
+
+------------------------------------------------------------------------------------------------------------
+
+    Classes for table
+        .table
+        .table-border
+        .table-striped
+        .table-hover
+        .table-sm
+
+------------------------------------------------------------------------------------------------------------
+    Classes for left Navigation
+        .list-group
+        .list-group-item
+        .active
+
+------------------------------------------------------------------------------------------------------------
+    Classes for card
+        .card-header
+        .card-body
+        .card-footer    
+
+------------------------------------------------------------------------------------------------------------
+    Classes for Button
+        .btn
+        .btn-primary     -blue
+        .btn-danger      -red
+        .btn-info        -skyblue
+        .btn-success     -green
+        .btn-warring     -yellow
+        .btn-secondary   -grey
+        .btn-white       -white
+        .btn-light       -light white
+
+------------------------------------------------------------------------------------------------------------
+    Classes for input tags
+        .form-control (text, number, password, testarea, file, date..)
+        .form-select (only for -select)
+           
+        .form-control-sm
+        .form-control-lg
+
+------------------------------------------------------------------------------------------------------------         
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+           
+        
+
+

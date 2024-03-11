@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <button onclick="one()">Home</button>
+        <button onclick="two()">About us</button>
+        <button onclick="three()">Project Gallery</button>
+        <button onclick="four()">Our Services</button>
+        <button onclick="addproduct()"> New Product </button>
+        <button onclick="addbook()"> New Book </button>
+        <button onclick="addjob()"> New Job </button>
+    </header>
+    <section>
+        <ul>
+            <li onclick="five()">Commnet list</li>
+            <li onlcick="six()">User list</li>
+            <li onclick="seven()">Blog list</li>
+            <li onclick="getBook()">Book list</li>
+            <li onclick="getjob()">job list</li>
+            <li onclick="getproduct()">product list</li>
+
+        </ul>
+        <div id="container"></div>
+
+    </section>
+
+
+    <script>
+
+      const delproduct=(pid) => {
+       // alert(pid) ;
+       let url= "http://localhost:1234/productlist/"+pid;
+       let postdata={method:"DELETE"};
+       fetch(url,postdata)
+       .then(resposne => resposne.json())
+       .then(emptydata=>{
+        alert("Product deleted succsessfully !");
+        getproduct();
+
+       })
+      }  
+
+      const delbook=(bid) => {
+       // alert(pid) ;
+       let url= "http://localhost:1234/booklist/"+bid;
+       let postdata={method:"DELETE"};
+       fetch(url,postdata)
+       .then(resposne => resposne.json())
+       .then(emptydata=>{
+        alert("book deleted succsessfully !");
+        getBook();
+
+       })
+      }  
+
+      const deljob=(jid) => {
+       // alert(pid) ;
+       let url= "http://localhost:1234/joblist/"+jid;
+       let postdata={method:"DELETE"};
+       fetch(url,postdata)
+       .then(resposne => resposne.json())
+       .then(emptydata=>{
+        alert("Product deleted succsessfully !");
+        getjob();
+
+       })
+      }  
+
+
+      const addproduct=() => {
+        window.location.href="newproduct.html";
+
+      }
+
+      const addbook=() => {
+        window.location.href="newbook.html";
+
+      }
+
+      const addjob=() => {
+        window.location.href="newjob.html";
+
+      }
+
+
+      const getBook=() => {
+        fetch("http://localhost:1234/booklist")
+        .then(response=>response.json())
+        .then(bookArray =>{
+          let temp="";
+          bookArray.map((book,index) =>{
+            temp=temp + "<div class='three'>";
+              temp=temp+"<h3>"+book.bookname+"</h3>";
+                temp=temp+"<p>"+book.price+"</p>";
+                temp=temp+"<p>"+book.author+"</p>";
+                //temp=temp+"<p> <button class=small>delete</button> </p>";
+                temp=temp+"<p> <button class=small onclick='delbook("+ book.id +")'>delete</button> </p>";
+                temp=temp+"</div>";
+          })
+          document.getElementById("container").innerHTML=temp;
+        })
+      }
+           
+      const getjob=() => {
+        fetch("http://localhost:1234/joblist")
+        .then(response=>response.json())
+        .then(jobArray =>{
+          let temp="";
+          jobArray.map((job,index) =>{
+            temp=temp + "<div class='three'>";
+              temp=temp+"<h3>"+job.title+"</h3>";
+                temp=temp+"<h3>"+job.salary+"</h3>";
+                temp=temp+"<h3>"+job.city+"</h3>";
+                //temp=temp+"<p> <button class=small>delete</button> </p>";
+                temp=temp+"<p> <button class=small onclick='deljob("+ job.id +")'>delete</button> </p>";
+                temp=temp+"</div>";
+          })
+          document.getElementById("container").innerHTML=temp;
+        })
+      }
+
+      const getproduct=() => {
+        fetch("http://localhost:1234/productlist")
+        .then(response=>response.json())
+        .then(productArray =>{
+          let temp="";
+          productArray.map((product,index) =>{
+            temp=temp + "<div class='three'>";
+              temp=temp+"<h3>"+product.pname+"</h3>";
+                temp=temp+"<h3>"+product.price+"</h3>";
+                temp=temp+"<h3>"+product.stock+"</h3>";
+                temp=temp+"<p> <button class=small onclick='delproduct("+ product.id +")'>delete</button> </p>";
+                temp=temp+"</div>";
+          })
+          document.getElementById("container").innerHTML=temp;
+        })
+      }
+
+      const six=() => {
+        fetch("https://jsonplaceholder.typicode.com/posts")
+        .then(response => response.json())
+        .then(blogArray =>{
+               blogArray.map((blog,index)=>{
+                temp = "<div class='two'>";
+                  temp = temp + "<h3>"+blog.title+"</h3>";
+                  temp = temp + "<p>"+blog.body+" </p>";
+                  temp = "</div>"
+               })
+               document.getElementById("container").innerHTML=temp;
+        })
+      }
+
+      const seven=()=>{
+        console.log("opened")
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(xyz=>xyz.json()) 
+            .then(userArray=>{
+                 let temp = "";
+                 userArray.map((user,index) =>{
+                temp = temp + "<div class='two'>";
+                  temp= temp + "<h3>"+user.id+"</h3>";
+                  temp= temp + "<small>"+user.name+ "</small>";
+                  temp= temp + "<small>"+user.email+ "</small>";
+                  temp = temp +"<p>"+user.website + "</p>";
+                  temp = temp + "</div>";  
+                })
+                document.getElementById("container").innerHTML=temp;
+            })
+            console.log("closed")
+      }
+
+         const one=()=>{
+            fetch("home.html")
+            .then(xyz=>xyz.text()) 
+            .then(abc=>{
+                // alert(abc);
+                document.getElementById("container").innerHTML=abc;
+            })
+        }
+
+        const two=()=>{
+            fetch("about.html")
+            .then(xyz=>xyz.text()) 
+            .then(abc=>{
+                // alert(abc);
+                document.getElementById("container").innerHTML=abc;
+            })
+        }
+
+        const three=()=>{
+            fetch("project.html")
+            .then(xyz=>xyz.text()) 
+            .then(abc=>{
+                // alert(abc);
+                document.getElementById("container").innerHTML=abc;
+            })
+        }
+
+        const four=()=>{
+            fetch("services.html")
+            .then(xyz=>xyz.text()) 
+            .then(abc=>{
+                // alert(abc);
+                document.getElementById("container").innerHTML=abc;
+            })
+        }
+
+        const five=()=>{
+            fetch("https://jsonplaceholder.typicode.com/comments")
+            .then(xyz=>xyz.json()) 
+            .then(commentArray=>{
+                 let temp = "";
+                 commentArray.map((comment,index) =>{
+                temp = temp  + "<div class='two'>";
+                  temp= temp + "<h3>"+comment.name+"</h3>";
+                  temp= temp + "<small>"+comment.email+ "</small>";
+                  temp = temp +"<p>"+comment.body + "</p>";
+                  temp = temp + "</div>";  
+                })
+                document.getElementById("container").innerHTML=temp;
+            })
+
+        }
+
+
+    </script>
+</body>
+</html>

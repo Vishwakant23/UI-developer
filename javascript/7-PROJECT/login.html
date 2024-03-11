@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="icon/css/all.css"/>
+        <script>
+
+            if(localStorage.getItem("userid")   )
+            {
+               window.location.href="index.html";
+            }
+
+            const userCheck = () =>{
+                let username = document.getElementById("email").value;
+                let pass = document.getElementById("password").value;
+                let url = "http://localhost:1234/account?email="+username+"&password="+pass;
+                fetch(url)
+                .then(response=>response.json())
+                .then(userinfo=>{
+                    if( userinfo.length >0 )
+                    {
+                        localStorage.setItem("userid", userinfo[0].id);
+                        localStorage.setItem("fullname", userinfo[0].name);
+                        window.location.href="index.html";
+                    }else{
+                        alert("invalid or Not Exists !");
+                    }
+                })
+            }
+
+
+            const save = () =>{
+            let username = document.getElementById("fname").value;
+            let usermo = document.getElementById("mobile").value;
+            let useremail = document.getElementById("user_email").value;
+            let userpassword = document.getElementById("user_password").value;
+            // console.log(username + usermo + userpassword);
+            let newuser =  {
+                    "name": username,
+                    "mobile": usermo,
+                    "email": useremail,
+                    "password": userpassword
+                }
+            let url = "http://localhost:1234/account";
+            let postdata = {
+                headers: {'Content-Type' : 'application/json'},
+                method: "POST",
+                body: JSON.stringify(newuser)
+            }
+            fetch(url, postdata)
+            .then(responce =>responce.json())
+            .then(userinfo =>{
+                alert("Added New User");
+            })
+        }
+
+        </script>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-4 border p-4 rounded">
+                    <h3 class="text-center text-danger"> Login </h3>
+                    <div class="mb-4">
+                        <label> e-Mail Id </label>
+                        <input type="email" id="email" class="form-control"/>
+                    </div>
+                    <div class="mb-4">
+                        <label> Password </label>
+                        <input type="password" id="password" class="form-control"/>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="userCheck()"> Login </button>
+                    </div>
+                </div><!--4end-->
+
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4 p-4 shadow-lg rounded">
+                    <h3 class="text-center text-danger"> Register </h3>
+                    <div class="mb-4">
+                        <label> Full Name </label>
+                        <input type="text" id="fname" class="form-control"/>
+                    </div>
+                    <div class="mb-4">
+                        <label> Mobile No </label>
+                        <input type="number" id="mobile" class="form-control"/>
+                    </div>
+                    <div class="mb-4">
+                        <label> e-Mail Id </label>
+                        <input type="email" id="user_email" class="form-control"/>
+                    </div>
+                    <div class="mb-4">
+                        <label> Password </label>
+                        <input type="password" id="user_password" class="form-control"/>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-danger" onclick="save()"> Submit </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

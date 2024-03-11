@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Createlocal</title>
+    <script>
+        const save=()=>{
+            let name= document.getElementById("fname").value;
+            let mobile=document.getElementById("mobile").value;
+            localStorage.setItem("fullname",name);
+            localStorage.setItem("mobileno",mobile);
+            alert("Local Storage Created..");
+        }
+
+    </script>
+</head>
+<body>
+    <h1>How to Create localStorage </h1>
+    <p>Web Storage : it use to store the data in browser memory up to 10 mb bested on browser </p>
+    <p>The web storege store thre data in 2 ways</p>
+    <ul>
+        <li>localStorage - it hold data in browser in memory for permanent till we not clear cookie </li>
+        <li>sessionStorage - it hode data in browwser memory temporary </li>
+    </ul>
+    <p>how to create localStorage - localStorage.setitem("varname","value")</p>
+    <p>how to fatch dat from  localStorage - localStorage.getItem("varname")</p>
+    <p>how to claer data from localStorage - localStorage.clear()</p>
+
+    <ul>
+        <li>localStorage data can be access in same tab , new tab , even after closing of browser as well</li>
+        <li>sessionStorage data can be access in same tab , but not in new tab, blank tab even not after closing the browser</li>   
+    </ul>
+    <p>Enter Your Name : <input type="text" id="fname"/></p>
+    <p>Enter Your Mobile : <input type="number" id="mobile"/></p>
+    <button onclick="save()">Save</button>
+    <p>
+        <a href="displaylocal.html">Show Data</a>
+    </p>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1{
+  color: orchid;
+  font-size: 45px;
+}
+
+.container{
+  width:80%;
+  margin: auto;
+  min-height: 400px;
+}
+
+.four{
+  margin:2%;
+  width: 20%;
+  display: inline-block;
+  font-size: 32px;
+  color: yellowgreen;
+}
+
+.mytable{
+  width: 70%;
+}
+
+.mytable tr th,td{
+  padding:6px  20px 6px;
+  border:0.5px solid skyblue;
+  text-align: left;
+}
+
+fieldset{
+  margin:2%;
+  width: 17%;
+  display: inline-block;
+  vertical-align: top;
+  border: 6px dotted maroon}
+
+legend{
+  color: red;
+  background-color: yellow;
+  font-size: 18px;
+  padding: 5px 30px 5px;
+  border-radius: 5px;
+}
+
+nav{
+  text-align: center;
+  padding: 18px;
+  background-color: peru;
+}
+
+.toplink{
+  color:white;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 15px 10px 15px;
+}
+
+.toplink:hover{
+  color: orangered;
+}
+
+.two {
+  margin: 2%;
+  padding: 1%;
+  width: 42%;
+  display: inline-block;
+  border-bottom: 5px dotted orange;
+  vertical-align: top;
+}
